@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON API</title>
+</head>
+<body>
+  <h1>From Json-server</h1>
+  <h2>Employees</h2>
+  <div id="data-container"></div>
+
+  <script> 
+    let url = 'https://json-server.cyclic.cloud/api/employees'; 
+ 
+          fetch(url) 
+          .then(response => response.json()) 
+          .then(data => {
+            // Use the JSON data here
+            const container = document.getElementById('data-container');
+            //container.textContent = JSON.stringify(data.liste[11], null, 2);
+            container.textContent = JSON.stringify(data[11], null, 2);  
+          })
+          .catch(error => {
+            console.error('Error fetching JSON data:', error);
+});
+
+  </script> 
+
+</body>
+</html>
+
+  
